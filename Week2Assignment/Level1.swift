@@ -19,7 +19,7 @@ func calculate(operation: (Int, Int) -> String) -> Void {
 }
 
 // 3. 모든 실행 코드를 함수 안에 넣음
-func run() {
+func runLevel1() {
     let result = sum(3, 7)
     print(result)
 

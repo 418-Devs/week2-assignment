@@ -7,6 +7,17 @@
 
 import Foundation
 
-print("Hello, World!")
+print("실행할 문제를 선택하세요: ", terminator: "")
+if let input = readLine() {
+    switch input {
+    case "1":
+        runLevel1()
+    case "2":
+        runLevel2()
+    default:
+        print("잘못된 입력입니다. 1 또는 2를 입력해주세요.")
+    }
+} else {
+    print("입력을 읽을 수 없습니다.")
+}
 
-run()

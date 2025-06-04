@@ -2,7 +2,7 @@
 //  main.swift
 //  Week2Assignment
 //
-//  Created by 서광용 on 6/3/25.
+//  Created by 이서린 on 6/3/25.
 //
 
 import Foundation
@@ -15,9 +15,11 @@ if let input = readLine() {
     case "2":
         runLevel2()
     default:
-        print("잘못된 입력입니다. 1 또는 2를 입력해주세요.")
+        print("잘못된 입력입니다.")
     }
 } else {
     print("입력을 읽을 수 없습니다.")
+    
 }
+
 

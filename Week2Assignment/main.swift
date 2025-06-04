@@ -7,13 +7,15 @@
 
 import Foundation
 
-let activeTask = 2
+let activeTask = 3
 
 switch activeTask {
 case 1:
     main1()
 case 2:
     main2()
+case 3:
+    main3()
 default:
     print("유효한 과제 번호가 아닙니다.")
 }

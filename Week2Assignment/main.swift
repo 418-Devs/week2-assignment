@@ -7,5 +7,11 @@
 
 import Foundation
 
-print("Hello, World!")
-	
+let activeTask = 1
+
+switch activeTask {
+case 1:
+    main1()
+default:
+    print("유효한 과제 번호가 아닙니다.")
+}

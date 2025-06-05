@@ -14,6 +14,8 @@ if let input = readLine() {
         runLevel1()
     case "2":
         runLevel2()
+    case"3":
+        runLevel3()
     default:
         print("잘못된 입력입니다.")
     }

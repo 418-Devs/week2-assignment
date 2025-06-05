@@ -36,10 +36,9 @@ func predictDeliveryDay(for address: String, status: DeliveryStatus) throws -> S
 }
 
 func main5() {
-    
 //    let address = ""
     let address = "경기도 수원시 영통구"
-    
+
 //    let status = DeliveryStatus.notStarted
 //    let status = DeliveryStatus.error
     let status = DeliveryStatus.inTransit(daysRemaining: 2)
@@ -53,7 +52,7 @@ func main5() {
         result = "잘못된 주소입니다."
     } catch DeliveryError.notStarted {
         result = "배송이 아직 시작되지 않았습니다."
-    } catch DeliveryError.systemError(let reason) {
+    } catch let DeliveryError.systemError(reason) {
         result = reason
     } catch {
         result = "알 수 없는 오류코드 : \(error)"

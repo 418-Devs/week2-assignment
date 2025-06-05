@@ -30,10 +30,17 @@ func c<T>(_ arr: [T]) -> [T] {
 }
 
 // 파라미터의 타입을 << 'Numeric 프로토콜'을 준수하는 타입의 요소를 가진 배열 >>로 변경한 함수
-// TODO: isMultiple(of: 2) 사용해보기
+
 func d<T: Numeric>(_ arr: [T]) -> [T] {
     arr.enumerated()
         .filter { $0.offset % 2 == 0 }
+        .map { $0.element }
+}
+
+// 추가 과제 isMultiple(of: 2) 사용해보기
+func e<T: Numeric>(_ arr: [T]) -> [T] {
+    arr.enumerated()
+        .filter { $0.offset.isMultiple(of: 2) }
         .map { $0.element }
 }
 

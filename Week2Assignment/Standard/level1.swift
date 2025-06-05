@@ -17,6 +17,7 @@ struct Level1 {
         let sum: (Int, Int) -> String = {
             return "두 수의 합은 \($0 + $1)입니다."
         }
+        print(sum(3, 7))
         
         // sum 계산 방식을 calculate 함수에 전달
         calculate(closure: sum)

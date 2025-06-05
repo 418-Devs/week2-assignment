@@ -10,28 +10,29 @@ import Foundation
 
 // Int배열의 짝수번째 요소를 제거해서 반환하는 함수 a
 func a(_ arr: [Int]) -> [Int] {
-    return arr.enumerated()
+    arr.enumerated()
         .filter { $0.offset % 2 == 0 }
         .map { $0.element }
 }
 
 // String 배열의 짝수번째 요소를 제거해서 반환하는 함수 b
 func b(_ arr: [String]) -> [String] {
-    return arr.enumerated()
+    arr.enumerated()
         .filter { $0.offset % 2 == 0 }
         .map { $0.element }
 }
 
 // a와 b를 제네릭을 사용하여 하나로 대체한 함수 c
 func c<T>(_ arr: [T]) -> [T] {
-    return arr.enumerated()
+    arr.enumerated()
         .filter { $0.offset % 2 == 0 }
         .map { $0.element }
 }
 
-// 파라미터의 타입을 << 'Numeric 프로토콜'을 준수하는 타입의 요소를 가진 배열 >>로 변경한 함수 d
+// 파라미터의 타입을 << 'Numeric 프로토콜'을 준수하는 타입의 요소를 가진 배열 >>로 변경한 함수
+// TODO: isMultiple(of: 2) 사용해보기
 func d<T: Numeric>(_ arr: [T]) -> [T] {
-    return arr.enumerated()
+    arr.enumerated()
         .filter { $0.offset % 2 == 0 }
         .map { $0.element }
 }

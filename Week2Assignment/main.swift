@@ -8,7 +8,7 @@
 import Foundation
 
 func main() {
-    let activeTask = 6
+    let activeTask = 7
 
     let taskMap: [Int: () -> Void] = [
         1: main1, //  필수문제 1
@@ -17,6 +17,7 @@ func main() {
         4: main4, //  필수문제 4
         5: main5, //  필수문제 5
         6: main6, //  도전문제 1
+        7: main7, //  도전문제 2
     ]
 
     if let task = taskMap[activeTask] {

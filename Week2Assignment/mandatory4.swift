@@ -6,6 +6,8 @@
 //
 // 필수문제 4
 
+import Foundation
+
 protocol Introducible {
     var name: String { get set }
     func introduce() -> String

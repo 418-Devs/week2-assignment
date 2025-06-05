@@ -8,6 +8,6 @@
 // 필수 문제(Standard) Lv1~5
 Level1.run()
 Level2.run()
-level3.run()
+Level3.run()
 
 // 도전 문제(Challage) Lv1~4

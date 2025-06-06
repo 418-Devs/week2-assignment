@@ -5,7 +5,7 @@
 //  Created by 서광용 on 6/4/25.
 //
 
-struct Level3 {
+struct StandardLevel3 {
     static func run() {
         print("\n👉 [필수 문제 3-1] [Int]의 짝수번째 요소 제거하여 반환")
         level3_1()

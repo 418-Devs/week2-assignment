@@ -5,7 +5,7 @@
 //  Created by 서광용 on 6/4/25.
 //
 
-struct Level2 {
+struct StandardLevel2 {
     static func run() {
         print("\n👉 [필수 문제 2-1] for-in -> map 변환")
         level2_1()

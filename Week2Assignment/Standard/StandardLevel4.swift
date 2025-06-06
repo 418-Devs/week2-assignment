@@ -15,7 +15,7 @@ var robot = Robot()
 let cat = Cat()
 let dog = Dog()
 
-struct Level4 {
+struct StandardLevel4 {
     static func run() {
         print("\n👉 [필수 문제 4-1] Introducible 프로토콜 구현 및 각 타입 소개 / Robot name 변경 추적 구현")
         level4_1()

@@ -5,9 +5,9 @@
 //  Created by 서광용 on 6/4/25.
 //
 
-struct Level1 {
+struct StandardLevel1 {
     static func run() {
-        print("👉 [필수 문제 1] 클로저를 매개변수로 전달하여 두 수의 합 계산")
+        print("\n👉 [필수 문제 1] 클로저를 매개변수로 전달하여 두 수의 합 계산")
         level1()
     }
     

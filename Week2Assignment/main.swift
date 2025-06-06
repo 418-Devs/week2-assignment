@@ -9,5 +9,6 @@
 Level1.run()
 Level2.run()
 Level3.run()
+Level4.run()
 
 // 도전 문제(Challage) Lv1~4

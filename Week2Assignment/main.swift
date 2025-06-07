@@ -55,8 +55,7 @@ outerLoop: while true {
             waitForEnter()
             continue
         case 5:
-            print("StandardLevel5 구현 예정")
-            // StandardLevel5.run()
+             StandardLevel5.run()
             waitForEnter()
             continue
         case 6:

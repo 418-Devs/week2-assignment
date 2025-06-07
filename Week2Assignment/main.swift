@@ -7,6 +7,7 @@
 
 import Foundation
 
+var view = View()
 
-run()
+view.run()
 

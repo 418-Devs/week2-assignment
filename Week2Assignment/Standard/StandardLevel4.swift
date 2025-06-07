@@ -11,11 +11,13 @@ protocol Introducible {
     func introduce() -> String
 }
 
-var robot = Robot()
-let cat = Cat()
-let dog = Dog()
-
 struct StandardLevel4 {
+    private static var robot = Robot()
+    private static let cat = Cat()
+    private static let dog = Dog()
+
+    
+    
     static func run() {
         print("\n👉 [필수 문제 4-1] Introducible 프로토콜 구현 및 각 타입 소개 / Robot name 변경 추적 구현")
         level4_1()
@@ -63,7 +65,7 @@ struct StandardLevel4 {
 }
 
 // MARK: - Robot
-struct Robot: Introducible {
+private struct Robot: Introducible {
     // 기본 값을 "Robot"으로 해주고, 값이 변경될 경우 출력
     var name: String = "로봇" {
         didSet(oldValue) {
@@ -87,7 +89,7 @@ struct Robot: Introducible {
 }
 
 // MARK: - Cat
-struct Cat: Introducible {
+private struct Cat: Introducible {
     var name: String = "나비"
     
     func introduce() -> String {
@@ -101,7 +103,7 @@ struct Cat: Introducible {
 }
 
 // MARK: - Dog
-struct Dog: Introducible {
+private struct Dog: Introducible {
     var name: String = "송이"
     
     func introduce() -> String {

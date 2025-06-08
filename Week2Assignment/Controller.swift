@@ -44,17 +44,21 @@ class Controller {
         model.isRunning = false
     }
     
-    // 필수 문제
+    
+    // MARK: 필수문제
+    // 필수 문제 1번
     func essential1() {
         print(es1.sum(es1.a,es1.b))
         es1.calculate(a: es1.a, b: es1.b, sum: es1.sum)
     }
+    // 필수 문제 2번
     func essential2() {
         print(es2.result)
         print(es2.result2)
         let result = es2.myMap(array: [1, 2, 3, 4, 5], transform: {String($0)})
         print(result)
     }
+    // 필수 문제 3번
     func essential3() {
         print(es3.a())
         print(es3.b())
@@ -64,22 +68,47 @@ class Controller {
         
         
     }
+    // 필수 문제 4번
     func essential4() {
-        printMessage(.notavatar)
+        for figure in es4.figures {
+            if var robot = figure as? Robot {
+                print(robot.introduce())
+                robot.name = "옵티머스"
+                print(robot.introduce())
+                robot.shootLaser()
+                robot.shootLaser()
+                robot.chargeBattery()
+            }
+            else if var cat = figure as? Cat {
+                print(cat.introduce())
+                cat.feed()
+                cat.feed()
+            }
+            else if var dog = figure as? Dog {
+                print(dog.introduce())
+                dog.play()
+                dog.play()
+            }
+        }
     }
+    // 필수 문제 5번
     func essential5() {
         printMessage(.notavatar)
     }
-    // 도전 문제
+    // MARK: 도전문제
+    // 도전 문제 1번
     func challenge1() {
         printMessage(.notavatar)
     }
+    // 도전 문제 2번
     func challenge2() {
         printMessage(.notavatar)
     }
+    // 도전 문제 3번
     func challenge3() {
         printMessage(.notavatar)
     }
+    // 도전 문제 4번
     func challenge4() {
         printMessage(.notavatar)
     }

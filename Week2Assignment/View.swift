@@ -8,6 +8,9 @@ import Foundation
 
 class View {
     let controller = Controller()
+    var robot = Robot()
+    let cat = Cat()
+    let dog = Dog()
     
     func run() {
         while controller.isRunning() {
@@ -38,9 +41,7 @@ class View {
                 
             // 필수문제 4번
             case "essential4":
-                controller.printMessage(.essential4)
                 controller.essential4()
-                
             // 필수문제 5번
             case "essential5":
                 controller.printMessage(.essential5)

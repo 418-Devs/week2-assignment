@@ -5,7 +5,7 @@
 //  Created by 서광용 on 6/5/25.
 //
 
-// Introducible 프로토콜 정의
+// MARK: - Introducible 프로토콜 정의
 protocol Introducible {
     var name: String { get set }
     func introduce() -> String
@@ -19,40 +19,39 @@ struct StandardLevel4 {
     
     
     static func run() {
-        print("\n👉 [필수 문제 4-1] Introducible 프로토콜 구현 및 각 타입 소개 / Robot name 변경 추적 구현")
+        print("\n👉 [필수 문제 4-1] Introducible 소개 메서드 실행 + Robot 변경 로직 테스트")
         level4_1()
         
-        print("\n👉 [필수 문제 4-2] 고유 메서드를 추가 및 각 타입의 고유 메서드를 하나씩 호출")
+        print("\n👉 [필수 문제 4-2] Introducible 배열 순회하며 각 타입 고유 메서드 실행")
         level4_2()
     }
     
     private static func level4_1() {
-        // robot
+        // Robot 소개 및 이름 변경 확인
         print("<로봇>")
         robot.name = "AI"
         print(robot.introduce())
         
-        // cat
+        // Cat 소개
         print("\n<고양이>")
         print(cat.name)
         print(cat.introduce())
         
-        // dog
+        // Dog 소개
         print("\n<강아지>")
         print(dog.name)
         print(dog.introduce())
     }
     
     private static func level4_2() {
-        // [Introducible] 타입 배열 정의 및 Robot, Cat, Dog 인스턴스 1개씩을 append
+        // Introducible 배열 생성 후, 각 인스턴스 추가
         var animals: [Introducible] = []
         animals.append(robot)
         animals.append(cat)
         animals.append(dog)
         
-        // 배열을 순회하며 각 타입의 고유 메서드를 호출
+        // 배열을 순회하며 타입 캐스팅 후, 각 타입의 고유 메서드 호출
         animals.forEach { animal in
-            // 배열을 순회하며 각 인스턴스를 실제 타입으로 캐스팅하여 고유의 메서드를 호출
             if let robot = animal as? Robot {
                 robot.charge()
             } else if let cat = animal as? Cat {
@@ -66,10 +65,10 @@ struct StandardLevel4 {
 
 // MARK: - Robot
 private struct Robot: Introducible {
-    // 기본 값을 "Robot"으로 해주고, 값이 변경될 경우 출력
+    // 이름 변경 감지 및 변경 사항 출력
     var name: String = "로봇" {
         didSet(oldValue) {
-            // 변경 이전값과 이후값이 같다면 출력하지 않도록 if문 사용
+            // 변경 이전값과 이후값이 같다면 출력하지 않음
             if name != oldValue {
                 print("name 변경 알림")
                 print("변경 이전 값: \(oldValue)")

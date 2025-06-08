@@ -7,27 +7,26 @@
 
 struct StandardLevel2 {
     static func run() {
-        print("\n👉 [필수 문제 2-1] for-in -> map 변환")
+        print("\n👉 [필수 문제 2-1] for-in 대신 map 사용")
         level2_1()
         
-        print("\n👉 [필수 문제 2-2] myMap 직접 구현")
+        print("\n👉 [필수 문제 2-2] map을 직접 구현한 myMap 함수")
         level2_2()
     }
     
-    // 2-1. for-in을 map으로 바꿔보기
+    // MARK: - filter 후 map으로 짝수만 문자열로 변환
     private static func level2_1() {
-        let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] // Array<Int>
-        let result = numbers.filter { $0 % 2 == 0 }.map { String($0) } // Array<String>
+        let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] // 정수 배열
+        let result = numbers.filter { $0 % 2 == 0 }.map { String($0) } // 짝수만 걸러서 문자열로 변환한 배열
         print(result)
     }
     
-    
-    // 2-2. 고차함수(myMap)를 직접 만들기
+    // MARK: - map 기능을 직접 구현한 myMap 함수
     private static func level2_2() {
         func myMap(_ array: [Int], _ transform: (Int) -> String) -> [String] {
             var outArray: [String] = []
             
-            // 배열 요소들을 순회하며 transform 클로저를 호출해 String으로 변환 뒤 outArray에 추가
+            // 각 요소에 transform 클로저 적용 후, String으로 변한 결과를 outArray 배열에 추가
             for i in array {
                 let a = transform(i)
                 outArray.append(a)
@@ -36,7 +35,7 @@ struct StandardLevel2 {
             return outArray
         }
         
-        // 전달된 배열의 각 요소를 문자열로 변환하기 위해 myMap 함수 호출
+        // myMap을 이용해 정수 배열을 문자열로 변환
         let result = myMap([1, 2, 3, 4, 5]) {
             String($0)
         }
@@ -44,4 +43,3 @@ struct StandardLevel2 {
         print(result)
     }
 }
-

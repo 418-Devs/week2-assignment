@@ -7,21 +7,21 @@
 
 struct StandardLevel3 {
     static func run() {
-        print("\n👉 [필수 문제 3-1] [Int]의 짝수번째 요소 제거하여 반환")
+        print("\n👉 [필수 문제 3-1] 짝수 인덱스의 Int 요소만 추출")
         level3_1()
         
-        print("\n👉 [필수 문제 3-2] [String]의 짝수번째 요소 제거하여 반환")
+        print("\n👉 [필수 문제 3-2] 짝수 인덱스의 String 요소만 추출")
         level3_2()
         
-        print("\n👉 [필수 문제 3-3] [Int], [String]의 짝수번째 요소 제거하여 반환")
+        print("\n👉 [필수 문제 3-3] 제네릭 함수로 Int/String 처리")
         level3_3()
         
-        print("\n👉 [필수 문제 3-4] 함수 c를 기반으로 수정하여 함수 d를 작성")
+        print("\n👉 [필수 문제 3-4] Numeric 타입만 처리하는 제네릭 함수")
         level3_4()
     }
     
     private static func level3_1() {
-        // MARK: - [Int]의 짝수번째 요소를 제거해서 반환하는 함수 a
+        // MARK: - 짝수 인덱스의 Int 요소만 추출하는 함수 a
         func a(_ array: [Int]) -> [Int] {
             var result: [Int] = []
             
@@ -39,7 +39,7 @@ struct StandardLevel3 {
     }
     
     private static func level3_2() {
-        // MARK: - [String]의 짝수 번째 요소를 제거해서 반환하는 함수 b
+        // MARK: - 짝수 인덱스의 String 요소만 추출하는 함수 b
         func b(_ array: [String]) -> [String] {
             var result: [String] = []
             
@@ -57,7 +57,8 @@ struct StandardLevel3 {
     }
     
     private static func level3_3() {
-        // MARK: - [Int], [String]을 하나의 함수로 대체하는 함수 c
+        // MARK: - 제네릭을 사용한 함수 c
+        /// T.Element는 배열 등 컬렉션 내부의 실제 요소 타입을 의미함
         func c<T: Sequence>(_ array: T) -> [T.Element] {
             // T.Element로 어떤 타입이 들어오던 그 안의 요소 타입에 맞춰 배열을 만들 수 있음
             var result: [T.Element] = []
@@ -78,8 +79,8 @@ struct StandardLevel3 {
     }
     
     private static func level3_4() {
-        // MARK: - c를 기반으로 Numeric 프로토콜을 준수하는 함수 d
-        // where T.Element: Numeric를 통해 Numeric 프로토콜 준수
+        // MARK: - Numeric 프로토콜을 만족하는 요소만 받는 함수 d
+        // where절을 이용해 T.Element가 Numeric을 따르도록함
         func d<T: Sequence>(_ array: T) -> [T.Element] where T.Element: Numeric {
             // T.Element로 어떤 타입이 들어오던 그 안의 요소 타입에 맞춰 배열을 만들 수 있음
             var result: [T.Element] = []
@@ -101,7 +102,7 @@ struct StandardLevel3 {
 
 
 /// T: Sequence일 때, [Int], [String]같은 전체 컨테이너 타입
-/// T.Element는 그 안에 있는 타입. 즉, 하나하나 꺼냈을 때 나오는 타입.
-/// T = [Int] 일 때, T.Element = Int / T = Set<Float>이면, T.Element = Float
-/// 요구사항이 ‘Numeric 프로토콜을 준수하는 타입의 요소를 가진 배열’이기 때문에, 그 요소 타입(T.Element)이 Numeric을 따르도록 제약을 건다.
-/// T.Element: Numeric을 통해 해당 요소가 Numeric을 따르도록 제약을 건다.
+/// T.Element: 컨테이너 내부의 실제 타입 (예: Int, Float)
+/// 예시) T = [Int] → T.Element = Int / T = Set<Float> → T.Element = Float
+/// 문제에서 요구하는 ‘Numeric 프로토콜을 따르는 요소’를 처리하기 위해,
+/// T.Element: Numeric 제약을 통해 해당 조건을 만족하도록 함

@@ -10,12 +10,15 @@ class View {
     let controller = Controller()
     
     func run() {
-        while true{
+        while controller.isRunning() {
             controller.printMessage(.start)
             controller.printMessage(.problem)
-            controller.inputStatus()
+            if let input = readLine() {
+                controller.inputStatus(input)
+            }
             
-            switch controller.model.stateSelect{
+            
+            switch controller.inputCheck(){
                 
             // 필수문제 1번
             case "essential1":
@@ -62,6 +65,11 @@ class View {
                 controller.printMessage(.challenge4)
                 controller.challenge4()
 
+            case "exit":
+                controller.printMessage(.exit)
+                controller.exit()
+                
+                
             // 잘못된 입력 메시지 출력
             default:
                 controller.printMessage(.invalid)

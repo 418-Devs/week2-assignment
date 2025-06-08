@@ -7,5 +7,6 @@
 
 class Model {
     var stateSelect: String = " "
+    var isRunning: Bool = true
     
 }

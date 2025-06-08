@@ -19,12 +19,14 @@ enum Message {
     case challenge3
     case challenge4
     case notavatar
+    case exit
     case invalid
+    
 
     var text: String {
         switch self {
         case .start:
-            return "문제를 선택하여 주세요! 🤔"
+            return "문제를 선택하여 주세요! ('exit' 입력시 종료) 🤔"
         case .problem:
             return "필수 문제 1~5 (essential1 ~ essential5), 도전 문제 1~4 (challenge1 ~ challenge4) 중 선택해주세요! 🤔"
         case .essential1:
@@ -47,6 +49,8 @@ enum Message {
             return "🔸 4. 도전 문제 (클래스 순환 참조)"
         case .notavatar:
             return "❌ 아직 구현되지 않았습니다."
+        case .exit:
+            return "👋 안녕! 다음에 또 봐요! 👋"
         case .invalid:
             return "essential1 ~ essential5, challenge1 ~ challenge4 중 선택해주세요! 🤔"
         }

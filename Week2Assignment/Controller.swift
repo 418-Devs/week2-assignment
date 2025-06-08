@@ -24,9 +24,24 @@ class Controller {
     }
     
     //  문제 선택 사용자 입력
-    func inputStatus() {
-        let input = readLine() ?? " "
+    func inputStatus(_ input: String) {
         model.stateSelect = input
+    }
+    
+    // MARK: getter
+    // input getter
+    func inputCheck() -> String {
+        return model.stateSelect
+    }
+    
+    // isRunning getter
+    func isRunning() -> Bool {
+            return model.isRunning
+        }
+    
+    // 프로그램 종료
+    func exit() {
+        model.isRunning = false
     }
     
     // 필수 문제

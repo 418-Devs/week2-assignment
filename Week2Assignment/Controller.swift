@@ -41,7 +41,13 @@ class Controller {
         print(result)
     }
     func essential3() {
-        printMessage(.notavatar)
+        print(es3.a())
+        print(es3.b())
+        print(es3.c(array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+        print(es3.c(array: ["가", "나", "다", "라", "마", "바", "사", "아", "자", "차"]))
+        print(es3.d(array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+        
+        
     }
     func essential4() {
         printMessage(.notavatar)

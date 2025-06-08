@@ -13,10 +13,11 @@ class View {
         while controller.isRunning() {
             controller.printMessage(.start)
             controller.printMessage(.problem)
-            if let input = readLine() {
-                controller.inputStatus(input)
+            guard let input = readLine() else {
+                controller.printMessage(.invalid)
+                continue
             }
-            
+            controller.inputStatus(input)
             
             switch controller.inputCheck(){
                 

@@ -12,7 +12,7 @@ class Controller {
     let es2 = Essential2()
     let es3 = Essential3()
     let es4 = Essential4()
-    let es5 = Essential5()
+    let es5 = Essential5(address: "부산광역시 진구", status: .inTransit(daysRemaining: 2))
     let ch1 = Challenge1()
     let ch2 = Challenge2()
     let ch3 = Challenge3()
@@ -93,7 +93,19 @@ class Controller {
     }
     // 필수 문제 5번
     func essential5() {
-        printMessage(.notavatar)
+        
+        do {
+            let result = try es5.predictDeliveryDay()
+            print(result)
+        } catch DeliveryError.invalidAddress {
+            controller.printMessage(.addresserror)
+        } catch DeliveryError.notStarted {
+            controller.printMessage(.notStarted)
+        } catch DeliveryError.systemError(let reason) {
+            controller.printMessage(.systemerror(reason: reason))
+        } catch {
+            controller.printMessage(.unknownerror)
+        }
     }
     // MARK: 도전문제
     // 도전 문제 1번

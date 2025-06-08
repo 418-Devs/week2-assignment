@@ -21,7 +21,18 @@ enum Message {
     case notavatar
     case exit
     case invalid
-    
+    case shot
+    case charged
+    case needcharge
+    case hungrytrue
+    case hungryfalse
+    case playtrue
+    case playfalse
+    case addresserror
+    case notStarted
+    case systemerror(reason: String)
+    case unknownerror
+    case transit(daysRemaining: Int)
 
     var text: String {
         switch self {
@@ -53,6 +64,30 @@ enum Message {
             return "👋 안녕! 다음에 또 봐요! 👋"
         case .invalid:
             return "essential1 ~ essential5, challenge1 ~ challenge4 중 선택해주세요! 🤔"
+        case .shot:
+            return "레이저를 발사합니다.🔫"
+        case .charged:
+            return "배터리가 10 충전 됐습니다. 🔋"
+        case .needcharge:
+            return "배터리 충전이 필요합니다. 🔋"
+        case .hungrytrue:
+            return "밥을 먹고 만족해합니다 🐱"
+        case .hungryfalse:
+            return "배가 부릅니다 😼"
+        case .playtrue:
+            return "아직 행복하기에 나중에 놀아주세요 🐶"
+        case .playfalse:
+            return "놀고 행복해집니다 🐶"
+        case .addresserror:
+            return "❌ 주소가 올바르지 않습니다."
+        case .notStarted:
+            return "🚚 배송이 아직 시작되지 않았습니다."
+        case .systemerror(let reason):
+            return "⚠️ 시스템 오류: \(reason)"
+        case .unknownerror:
+            return "⚠️ 알 수 없는 오류"
+        case .transit(daysRemaining: let daysRemaining):
+            return "🚚 \(daysRemaining)일 후 배송합니다."
         }
     }
     

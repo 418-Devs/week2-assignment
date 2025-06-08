@@ -4,6 +4,7 @@
 //
 //  Created by 이태윤 on 6/5/25.
 //
+var controller = Controller()
 
 class Essential4 {
     var figures: [Introducible] = []
@@ -42,17 +43,19 @@ struct Robot: Introducible {
     
     // 배터리 충전 메서드
     mutating func chargeBattery() {
-        print("배터리가 10 충전 됐습니다. 🔋")
+        controller.printMessage(.charged)
         bttery += 10
     }
     
     // 레이저 발사 메서드
     mutating func shootLaser() {
         if bttery >= 10 {
-            print("레이저를 발사합니다.🔫")
+            // 레이저 발사 메시지
+            controller.printMessage(.shot)
             bttery -= 10
         } else {
-            print("배터리 충전이 필요합니다. 🔋")
+            // 충전 필요 메시지
+            controller.printMessage(.needcharge)
         }
     }
 }
@@ -68,9 +71,9 @@ struct Cat: Introducible {
     mutating func feed() {
             if isHungry {
                 isHungry = false
-                print("\(name)가 밥을 먹고 만족해합니다 🐱")
+                controller.printMessage(.hungrytrue)
             } else {
-                print("\(name)는 배가 부릅니다 😼")
+                controller.printMessage(.hungryfalse)
                 isHungry = true
             }
         }
@@ -87,11 +90,11 @@ struct Dog: Introducible {
     // 놀아주기 메서드
     mutating func play() {
         if !isHappy {
-            print("\(name)이 놀고 행복해집니다 🐶")
+            controller.printMessage(.playfalse)
             isHappy = true
         }
         else {
-            print("\(name)은 아직 행복하기에 나중에 놀아주세요 🐶")
+            controller.printMessage(.playtrue)
             isHappy = false
         }
     }

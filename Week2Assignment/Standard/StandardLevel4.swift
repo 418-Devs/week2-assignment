@@ -6,7 +6,7 @@
 //
 
 // MARK: - Introducible 프로토콜 정의
-protocol Introducible {
+private protocol Introducible {
     var name: String { get set }
     func introduce() -> String
 }
@@ -15,8 +15,6 @@ struct StandardLevel4 {
     private static var robot = Robot()
     private static let cat = Cat()
     private static let dog = Dog()
-
-    
     
     static func run() {
         print("\n👉 [필수 문제 4-1] Introducible 소개 메서드 실행 + Robot 변경 로직 테스트")

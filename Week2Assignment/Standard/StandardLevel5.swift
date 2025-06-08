@@ -6,14 +6,14 @@
 //
 
 // MARK: - 배송 상태 열거형
-enum DeliveryStatus: Equatable {
+private enum DeliveryStatus: Equatable {
     case notStarted
     case isTransit(daysRemaining: Int)
     case error
 }
 
 // MARK: - 배송 관련 에러 열거형
-enum DeliveryError: Error {
+private enum DeliveryError: Error {
     case invalidAddress // 주소가 잘못된 경우
     case notStarted // 배송이 시작되지 않은 경우
     case systemError(reason: String) // 시스템 에러

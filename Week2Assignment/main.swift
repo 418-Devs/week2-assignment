@@ -59,13 +59,11 @@ outerLoop: while true {
             waitForEnter()
             continue
         case 6:
-            print("ChallengeLevel1 구현 예정")
-            // ChallengeLevel1.run()
+             ChallengeLevel1.run()
             waitForEnter()
             continue
         case 7:
-            print("ChallengeLevel2 구현 예정")
-            // ChallengeLevel2.run()
+             ChallengeLevel2.run()
             waitForEnter()
             continue
         case 8:

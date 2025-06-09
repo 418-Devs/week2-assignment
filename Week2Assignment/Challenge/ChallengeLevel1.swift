@@ -28,17 +28,17 @@ private struct HydrogenEngine: Engine {
 struct ChallengeLevel1 {
     static func run() {
         print("\n👉 [도전 문제 1-1] 일반 자동차(Car) 정보 출력 및 동작 테스트")
-        ChallengeLevel1_1()
+        challengeLevel1_1()
         
         print("\n👉 [도전 문제 1-2] 전기 자동차(ElectricCar) 정보 출력 테스트")
-        ChallengeLevel1_2()
+        challengeLevel1_2()
         
         print("\n👉 [도전 문제 1-3] 하이브리드 자동차(HybridCar) 엔진 변경 테스트")
-        ChallengeLevel1_3()
+        challengeLevel1_3()
     }
     
     // Car 테스트
-    private static func ChallengeLevel1_1() {
+    private static func challengeLevel1_1() {
         let car = Car(brandName: "Hyundai", modelName: "Sonata", modelYear: "2010년 모델", engine: GasolineEngine())
         print(car.brandName)
         print(car.engineName)
@@ -49,17 +49,16 @@ struct ChallengeLevel1 {
     }
     
     // ElectricCar 테스트
-    private static func ChallengeLevel1_2() {
+    private static func challengeLevel1_2() {
         let electricCar = ElectricCar(brandName: "Tesla", modelName: "Model 3", modelyear: "2023년 모델")
         print(electricCar.brandName)
         print(electricCar.engineName)
         print(electricCar.modelName)
         print(electricCar.modelYear)
-
     }
     
     // HybridCar 테스트
-    private static func ChallengeLevel1_3() {
+    private static func challengeLevel1_3() {
         let hybridCar = HybridCar(brandName: "Hyundai", modelName: "Nexo", modelyear: "2022년 모델")
         print(hybridCar.engineName)
         print(hybridCar.switchEngine(to: GasolineEngine()))

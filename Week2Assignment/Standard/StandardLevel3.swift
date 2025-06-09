@@ -99,8 +99,6 @@ struct StandardLevel3 {
     }
 }
 
-
-
 /// T: Sequence일 때, [Int], [String]같은 전체 컨테이너 타입
 /// T.Element: 컨테이너 내부의 실제 타입 (예: Int, Float)
 /// 예시) T = [Int] → T.Element = Int / T = Set<Float> → T.Element = Float

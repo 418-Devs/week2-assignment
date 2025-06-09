@@ -26,6 +26,6 @@ struct StandardLevel1 {
     // 동일한 형태의 클로저를 받아 실행하는 함수
     private static func calculate(closure: (Int, Int) -> String) {
         // 전달된 클로저를 통해 동일한 동작 실행
-        print(closure(3, 7))
+        print(closure(1, 7))
     }
 }

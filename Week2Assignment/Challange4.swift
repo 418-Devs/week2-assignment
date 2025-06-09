@@ -15,12 +15,11 @@ class Person {
         self.name = name
     }
     
-    // Phone 참조
-    var phone: Phone?
+    // 순환참조 테스트용 변수 (Phone 참조)
+    weak var phone: Phone?
 
     deinit {
         print("Person \(name) 해제됨")
-        fflush(stdout)
     }
 }
 
@@ -30,12 +29,11 @@ class Phone {
         self.model = model
     }
     
-    // Pesron 참조
-    var owner: Person?
+    // 순환참조 테스트용 변수(Pesron 참조)
+    weak var owner: Person?
 
     deinit {
         print("Phone \(model) 해제됨")
-        fflush(stdout)
     }
     
     // 클로저 프로퍼티 선언
@@ -45,19 +43,20 @@ class Phone {
 func main9() {
     print("도전문제 4 진입")
     
-    var person: Person? = Person(name: "철수")
-    var phone: Phone? = Phone(model: "아이폰")
-
+    let person: Person? = Person(name: "철수")
+    let phone: Phone? = Phone(model: "아이폰")
+    
+    //순환참조 코드
     person?.phone = phone
     phone?.owner = person
     
-    // 클로저가 외부의 person 인스턴스를 참조 (순환 참조 유도)
+    // 클로저가 외부의 person 인스턴스를 참조 (순환 참조 확인 구문)
 //    phone?.printOwnerName = {
 //        print("소유자 이름: \(phone?.owner?.name ?? "없음")")
 //    }
 //    
 
-    
+    // 순환참조를 해결하는 클로저 구문
     phone?.printOwnerName = { [weak phone] in
         print("소유자 이름: \(phone?.owner?.name ?? "없음")")
     }
@@ -65,11 +64,6 @@ func main9() {
     // 클로저 프로퍼티 호출
     phone?.printOwnerName?()
     
-    // 인스턴스 참조 해제
-    print("도전문제 종료 직전")
-    person = nil
-    phone = nil
-    sleep(1)
     print("종료 완료")
 }
 

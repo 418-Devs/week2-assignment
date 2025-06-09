@@ -8,13 +8,16 @@
 
 import Foundation
 
+//Introducible 프로토콜 정의
 protocol Introducible {
     var name: String { get set }
     func introduce() -> String
 }
 
+//Introducible 프로토콜을 채택한 클래스 Robot
 class Robot: Introducible {
     var name: String {
+        //name 변경 감지 후 메시지 출력
         didSet {
             if name != oldValue {
                 print(
@@ -35,7 +38,8 @@ class Robot: Introducible {
     init(name: String) {
         self.name = name
     }
-
+    
+    // 고유 메소드 batteryCharge 구현
     var batteryLevel = 70
 
     func batteryCharge(_ charge: Int) -> String {
@@ -49,6 +53,7 @@ class Robot: Introducible {
     }
 }
 
+// Introducible 프로토콜을 채택한 클래스 Cat
 class Cat: Introducible {
     var name: String
     var isSleep = false
@@ -60,7 +65,8 @@ class Cat: Introducible {
     init(name: String) {
         self.name = name
     }
-
+    
+    // 고유 메소드 fallAsleep, awake 구현
     func fallAsleep() -> String {
         if isSleep == false {
             isSleep = true
@@ -80,6 +86,7 @@ class Cat: Introducible {
     }
 }
 
+// Introducible 프로토콜을 채택한 클래스 Dog
 struct Dog: Introducible {
     var name: String
 
@@ -90,7 +97,8 @@ struct Dog: Introducible {
     init(name: String) {
         self.name = name
     }
-
+    
+    // 고유 메소드 bark 구현
     func bark() -> String {
         return "멍멍"
     }

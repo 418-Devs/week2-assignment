@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Introducible 프로토콜 확장으로 자기소개 메소드를 기본구현
 extension Introducible {
     func introduce() -> String {
         return "안녕하세요, 저는 \(name)입니다."
@@ -28,7 +29,8 @@ class RobotCh3: Introducible {
             }
         }
     }
-
+    
+    //Robot의 introduce는 재정의
     func introduce() -> String {
         return "어서와라 인간, 나는 \(name)(이)라고 한다."
     }
@@ -90,6 +92,7 @@ struct DogCh3: Introducible {
 }
 
 func main8() {
+    //동작 확인용 코드
     let robotSkynet = RobotCh3(name: "스카이넷")
     let catPersian = CatCh3(name: "페르시안")
     let dogMartiz = DogCh3(name: "말티즈")

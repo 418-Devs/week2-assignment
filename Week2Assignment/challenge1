@@ -1,0 +1,157 @@
+//
+//  challenge1.swift
+//  Week2Assignment
+//
+//  Created by 이서린 on 6/7/25.
+//
+import Foundation
+
+func runChallenge1() {
+    // MARK: - Engine, ElectricEngine, HydrogenEngine 정의
+
+    class Engine {
+        private var isRunning: Bool = false
+
+        func start() {
+            isRunning = true
+            print("엔진이 켜졌습니다.")
+        }
+
+        func stop() {
+            isRunning = false
+            print("엔진이 꺼졌습니다.")
+        }
+
+        func status() -> String {
+            return isRunning ? "동작 중" : "정지 상태"
+        }
+    }
+
+    class ElectricEngine: Engine {
+        func chargeBattery() {
+            print("🔋 전기 배터리를 충전 중입니다.")
+        }
+    }
+
+    class HydrogenEngine: Engine {
+        func refillHydrogen() {
+            print("💧 수소를 보급 중입니다.")
+        }
+    }
+
+    // MARK: - Car 베이스 클래스
+
+    class Car {
+        public let brand: String
+        public let model: String
+        public let year: String
+        internal var engine: Engine
+
+        init(brand: String, model: String, year: String, engine: Engine) {
+            self.brand = brand
+            self.model = model
+            self.year = year
+            self.engine = engine
+        }
+
+        public func drive() {
+            engine.start()
+            print("🚗 \(brand) \(model) 주행 중…")
+        }
+
+        public func stop() {
+            engine.stop()
+            print("🛑 \(brand) \(model) 정지했습니다.")
+        }
+
+        public func status() {
+            print("""
+            🚘 자동차 상태:
+            - 브랜드: \(brand)
+            - 모델: \(model)
+            - 연식: \(year)
+            - 엔진 상태: \(engine.status())
+            """)
+        }
+    }
+
+    // MARK: - ElectricCar
+
+    class ElectricCar: Car {
+        init(brand: String, model: String, year: String, engine: ElectricEngine) {
+            super.init(brand: brand, model: model, year: year, engine: engine)
+        }
+
+        public func charge() {
+            if let electricEngine = engine as? ElectricEngine {
+                electricEngine.chargeBattery()
+            }
+        }
+    }
+
+    // MARK: - HybridCar
+
+    class HybridCar: Car {
+        override init(brand: String, model: String, year: String, engine: Engine) {
+            super.init(brand: brand, model: model, year: year, engine: engine)
+        }
+
+        public func switchEngine(to newEngine: Engine) {
+            engine.stop()
+            self.engine = newEngine
+            print("🔁 엔진이 새로운 타입으로 교체되었습니다: \(type(of: newEngine))")
+        }
+    }
+
+    // MARK: - 실행 예시
+
+    let electricEngine = ElectricEngine()
+    let hydrogenEngine = HydrogenEngine()
+
+    let hybridCar = HybridCar(brand: "Hyundai", model: "Nexo", year: "2025", engine: electricEngine)
+
+    print("📌 초기 상태 확인")
+    hybridCar.status()
+
+    print("\n🚀 주행 시작")
+    hybridCar.drive()
+
+    print("\n🛑 주행 종료")
+    hybridCar.stop()
+
+    print("\n🔁 엔진 교체 중 (ElectricEngine → HydrogenEngine)")
+    hybridCar.switchEngine(to: hydrogenEngine)
+
+    print("\n🚀 다시 주행")
+    hybridCar.drive()
+
+    print("\n✅ 최종 상태 확인")
+    hybridCar.status()
+
+}
+
+
+/*
+MARK: [상속을 사용한 기능 확장]
+- 장점:
+    - 공통 기능을 상위 클래스에서 재사용 가능
+    - 코드 중복 최소화
+    - 클래스 간 구조가 명확하게 계층화됨
+
+- 단점:
+    - 다중 상속이 불가능
+    - 불필요한 기능까지 자식 클래스가 상속할 수 있음
+    - 하나의 클래스만 상속 가능하므로 유연성이 떨어질 수 있음
+
+MARK: [프로토콜 채택을 통한 기능 확장]
+- 장점:
+    - 다중 프로토콜 채택 가능 → 더 유연한 구조 설계 가능
+    - 특정 기능 단위로 구성되어 있어 테스트나 유지보수 용이
+    - 기능이 필요할 때만 구현 가능 → 경량화된 구조
+
+- 단점:
+    - 기본 구현이 불가능 (단, `protocol extension`으로 부분 구현 가능)
+    - 타입 간 관계성 표현이 약함 (공통 속성 공유 X)
+
+*/
+

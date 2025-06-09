@@ -35,7 +35,9 @@ func runLevel5() {
     }
     
     let address = "경기도 시흥시 능곡동"
-    let status = DeliveryStatus.inTransit(daysRemaining: 3)
+   // let status = DeliveryStatus.inTransit(daysRemaining: 3)
+    //let status = DeliveryStatus.notStarted
+    let status = DeliveryStatus.error
 
     
     do {

@@ -16,6 +16,9 @@ class Person {
     }
     
     // 순환참조 테스트용 변수 (Phone 참조)
+//    var phone: Phone?
+    
+    // weak로 약한참조로 변경
     weak var phone: Phone?
 
     deinit {
@@ -29,7 +32,10 @@ class Phone {
         self.model = model
     }
     
-    // 순환참조 테스트용 변수(Pesron 참조)
+    // 순환참조 테스트용 변수(Person 참조)
+//    var owener: Person?
+    
+    // weak로 약한참조로 변경
     weak var owner: Person?
 
     deinit {
@@ -64,6 +70,6 @@ func main9() {
     // 클로저 프로퍼티 호출
     phone?.printOwnerName?()
     
-    print("종료 완료")
+    print("도전문제 4 종료")
 }
 

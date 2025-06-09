@@ -29,8 +29,8 @@ class RobotCh3: Introducible {
             }
         }
     }
-    
-    //Robot의 introduce는 재정의
+
+    // Robot의 introduce는 재정의
     func introduce() -> String {
         return "어서와라 인간, 나는 \(name)(이)라고 한다."
     }
@@ -92,7 +92,7 @@ struct DogCh3: Introducible {
 }
 
 func main8() {
-    //동작 확인용 코드
+    // 동작 확인용 코드
     let robotSkynet = RobotCh3(name: "스카이넷")
     let catPersian = CatCh3(name: "페르시안")
     let dogMartiz = DogCh3(name: "말티즈")

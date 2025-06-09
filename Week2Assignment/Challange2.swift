@@ -10,7 +10,7 @@ import Foundation
 
 struct SortableBox<T> {
     var items: [T]
-    
+
     // Comparable 타비을 준수할 경우에만 정렬
     mutating func sortItems() where T: Comparable {
         items.sort()

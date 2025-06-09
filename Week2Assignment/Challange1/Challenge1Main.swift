@@ -10,14 +10,14 @@ import Foundation
 
 public func main6() {
     let testCar = HybridCar(brand: "Hyundai", modelName: "Tuscon", modelYear: "2025")
-    
-    //기능 확인용 코드
+
+    // 기능 확인용 코드
     testCar.drive()
     testCar.switchEngine(to: ElectricEngine())
     testCar.switchEngine(to: HybridEngine())
     testCar.stop()
     testCar.switchEngine(to: HybridEngine())
-    
+
     /*
      상속을 사용하여 기능을 추가하는 것과, 프로토콜 채택을 통해서 기능을 추가하는 것의 장단점, 차이를 고민하고 주석으로 서술해주세요.
      - 상속

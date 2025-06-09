@@ -8,7 +8,7 @@
 import Foundation
 
 func main() {
-    let activeTask = 6
+    let activeTask = 9
 
     let taskMap: [Int: () -> Void] = [
         1: main1, //  필수문제 1

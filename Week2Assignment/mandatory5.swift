@@ -23,20 +23,19 @@ enum DeliveryError: Error {
 }
 
 func predictDeliveryDay(for address: String, status: DeliveryStatus) throws -> String {
-    
     // 주소가 빈 문자열일 경우
     if address.isEmpty {
         throw DeliveryError.invalidAddress
     }
 
     switch status {
-        // 배송이 아직 시작되지 않은 경우
+    // 배송이 아직 시작되지 않은 경우
     case .notStarted:
         throw DeliveryError.notStarted
-        // 시스템 에러 상태
+    // 시스템 에러 상태
     case .error:
         throw DeliveryError.systemError(reason: "시스템 에러")
-        // 배송일 출력
+    // 배송일 출력
     case let .inTransit(daysRemaining):
         return "배송까지 \(daysRemaining)일 남았습니다."
     }
@@ -45,7 +44,7 @@ func predictDeliveryDay(for address: String, status: DeliveryStatus) throws -> S
 func main5() {
 //    let address = ""
     let address = "경기도 수원시 영통구"
-//   에러 확인용 코드
+    //   에러 확인용 코드
 //    let status = DeliveryStatus.notStarted
 //    let status = DeliveryStatus.error
     let status = DeliveryStatus.inTransit(daysRemaining: 2)

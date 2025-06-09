@@ -13,7 +13,7 @@ func main2() {
     // 요구사항 1 for-in 문을 map을 사용하는 코드로 변환
 
     let numbers = [1, 2, 3, 4, 5]
-    let result = numbers.map{ String($0) }
+    let result = numbers.map { String($0) }
     print(result)
 
     print("----요구사항 2----")
@@ -34,7 +34,7 @@ func main2() {
         .enumerated()
         .filter { $0.offset % 2 != 0 }
         .map { String($0.element) }
-    
+
     print(resultOddIndex)
 
     print("----myMap----")

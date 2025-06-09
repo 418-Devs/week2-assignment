@@ -4,7 +4,7 @@
 //
 //  Created by Yoon on 6/5/25.
 //
-// 도전과제 2
+// 도전문제 2
 
 import Foundation
 

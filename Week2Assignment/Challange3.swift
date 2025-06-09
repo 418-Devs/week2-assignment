@@ -6,6 +6,8 @@
 //
 // 도전문제 3
 
+import Foundation
+
 extension Introducible {
     func introduce() -> String {
         return "안녕하세요, 저는 \(name)입니다."

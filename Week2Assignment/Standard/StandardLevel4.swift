@@ -11,6 +11,13 @@ private protocol Introducible {
     func introduce() -> String
 }
 
+// Introducible 채택하는 타입들에게 기본 introduce() 동작 생성
+extension Introducible {
+    func introduce() -> String {
+        return "안녕! 내 이름은 \(name)야!"
+    }
+}
+
 struct StandardLevel4 {
     private static var robot = Robot()
     private static let cat = Cat()
@@ -27,7 +34,7 @@ struct StandardLevel4 {
     private static func level4_1() {
         // Robot 소개 및 이름 변경 확인
         print("<로봇>")
-        robot.name = "AI"
+        robot.name = "AI-01"
         print(robot.introduce())
         
         // Cat 소개
@@ -64,7 +71,7 @@ struct StandardLevel4 {
 // MARK: - Robot
 private struct Robot: Introducible {
     // 이름 변경 감지 및 변경 사항 출력
-    var name: String = "로봇" {
+    var name: String = "AI" {
         didSet(oldValue) {
             // 변경 이전값과 이후값이 같다면 출력하지 않음
             if name != oldValue {
@@ -77,8 +84,9 @@ private struct Robot: Introducible {
         }
     }
     
+    // 로봇 커스텀 소개
     func introduce() -> String {
-        return "안녕하세요, 저는 \(name)입니다."
+        return "010101.. 로봇 \(name), 사용자 인식 완료."
     }
     
     // Robot의 고유 메서드
@@ -91,9 +99,10 @@ private struct Robot: Introducible {
 private struct Cat: Introducible {
     var name: String = "나비"
     
-    func introduce() -> String {
-        return "고양이 나비"
-    }
+// 기본 introduce() 동작 실행
+//    func introduce() -> String {
+//        return "고양이 나비"
+//    }
     
     // Cat의 고유 메서드
     func scratch() {
@@ -105,9 +114,10 @@ private struct Cat: Introducible {
 private struct Dog: Introducible {
     var name: String = "송이"
     
-    func introduce() -> String {
-        return "강아지 송이"
-    }
+// 기본 introduce() 동작 실행
+//    func introduce() -> String {
+//        return "안녕! 난 강아지 \(name)야!"
+//    }
     
     // Dog의 고유 메서드
     func wagTail() {

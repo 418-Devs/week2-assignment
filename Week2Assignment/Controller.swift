@@ -161,10 +161,22 @@ class Controller {
     }
     // 도전 문제 3번
     func challenge3() {
-        printMessage(.notavatar)
+        for figure in ch3.figures {
+            if var robot = figure as? Robot {
+                robot.name = "옵티머스"
+                print(robot.introduce())
+            }
+            else if var cat = figure as? Cat {
+                print(cat.introduce())
+            }
+            else if var dog = figure as? Dog {
+                print(dog.introduce())
+
+            }
+        }
     }
     // 도전 문제 4번
     func challenge4() {
-        printMessage(.notavatar)
+        ch4.run()
     }
 }

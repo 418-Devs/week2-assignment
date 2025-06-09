@@ -6,5 +6,22 @@
 //
 
 class Challenge3 {
+    var figures: [Introducible] = []
     
+    var robot = Robot()
+    var cat = Cat()
+    var dog = Dog()
+        
+    init() {
+        figures.append(robot)
+        figures.append(cat)
+        figures.append(dog)
+    }
+}
+
+
+extension Introducible {
+    func introduce() -> String {
+        return "안녕하세요, 저는 \(name)입니다."
+    }
 }

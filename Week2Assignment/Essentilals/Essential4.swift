@@ -32,13 +32,12 @@ struct Robot: Introducible {
         }
     }
     
+    func introduce() -> String {
+        return Message.robotIntroduce(name: name, bttery: bttery).text
+    }
+    
     // 배터리 잔량 프로퍼티 접근자 제어 private(set)으로 값을 임의로 변경 불가하게 설정
     private(set) var bttery: Int = 10
-    
-    
-    func introduce() -> String {
-        return "안녕하세요, 저는 \(name)입니다."
-    }
     
     // 배터리 충전 메서드
     mutating func chargeBattery() {
@@ -63,9 +62,6 @@ struct Cat: Introducible {
     var name: String = "춘식이"
     var isHungry: Bool = true
     
-    func introduce() -> String {
-        return "안녕하세요, 저는 \(name)입니다."
-    }
     // 밥주기 메서드
     mutating func feed() {
             if isHungry {
@@ -82,9 +78,6 @@ struct Dog: Introducible {
     var name: String = "라이언"
     var isHappy: Bool = false
 
-    func introduce() -> String {
-        return "안녕하세요, 저는 \(name) 입니다."
-    }
     
     // 놀아주기 메서드
     mutating func play() {

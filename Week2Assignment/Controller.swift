@@ -152,7 +152,8 @@ class Controller {
     // MARK: 도전문제
     // 도전 문제 1번
     func challenge1() {
-        printMessage(.notavatar)
+        ch1.run()
+
     }
     // 도전 문제 2번
     func challenge2() {

@@ -4,7 +4,6 @@
 //
 //  Created by 이태윤 on 6/5/25.
 //
-var controller = Controller()
 
 class Essential4 {
     var figures: [Introducible] = []
@@ -33,7 +32,7 @@ struct Robot: Introducible {
         }
     }
     
-    // 배터리 잔량 프로퍼티
+    // 배터리 잔량 프로퍼티 접근자 제어 private(set)으로 값을 임의로 변경 불가하게 설정
     private(set) var bttery: Int = 10
     
     

@@ -6,8 +6,10 @@
 //
 import Foundation
 
+var controller = Controller()
+
+
 class View {
-    let controller = Controller()
     var robot = Robot()
     let cat = Cat()
     let dog = Dog()

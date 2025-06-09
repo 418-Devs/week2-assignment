@@ -1,5 +1,5 @@
 //
-//  Challenge1Main.swift
+//  Challenge1/Challenge1Main.swift
 //  Week2Assignment
 //
 //  Created by Yoon on 6/5/25.

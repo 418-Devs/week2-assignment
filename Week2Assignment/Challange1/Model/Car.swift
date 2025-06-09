@@ -1,5 +1,5 @@
 //
-//  Car.swift
+//  Challenge1/Model/Car.swift
 //  Week2Assignment
 //
 //  Created by Yoon on 6/5/25.

@@ -1,5 +1,5 @@
 //
-//  CarStatus.swift
+//  Challenge1/Model/CarStatus.swift
 //  Week2Assignment
 //
 //  Created by Yoon on 6/5/25.

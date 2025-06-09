@@ -68,9 +68,11 @@ private struct Robot: Introducible {
         didSet(oldValue) {
             // 변경 이전값과 이후값이 같다면 출력하지 않음
             if name != oldValue {
-                print("name 변경 알림")
-                print("변경 이전 값: \(oldValue)")
-                print("변경 이후 값: \(name)")
+                print("""
+                name 변경 알림
+                변경 이전 값: \(oldValue)
+                변경 이후 값: \(name)
+                """)
             }
         }
     }

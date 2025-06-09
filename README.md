@@ -10,16 +10,10 @@
 ---
 
 ## 👨‍🏫 프로젝트 소개  
-<<<<<<< HEAD
-Swift 언어 학습을 위한 콘솔 기반 과제 프로젝트입니다.  
-필수 구현 과제를 `StandardLevel1 ~ 5`로 나누어 모듈화하고, `main.swift`에서 실행할 수 있도록 구성하였습니다.  
-각 문제는 클로저, 고차함수, 제네릭, 열거형, 에러 처리 등 다양한 Swift 개념을 포함합니다.
-=======
 - Swift 언어 학습을 위한 콘솔 기반 과제 프로젝트입니다.  
 - 필수 구현 과제(`StandardLevel1 ~ 5`)는 클로저, 고차함수, 제네릭, 열거형, 에러 처리 등 Swift의 기초 개념을 중심으로 구성되어 있습니다.
 - 도전 구현 과제(`ChallengeLevel1 ~ 4`)는 상속, 연산 프로퍼티, 프로토콜, ARC, 클로저 순환 참조 등 심화 개념을 다룹니다.
 - 모든 문제는 각각의 파일로 모듈화되어 있으며, `main.swift`에서 실행할 수 있도록 구성되어 있습니다.
->>>>>>> mori/challenge
 
 ---
 
@@ -34,31 +28,20 @@ Swift 언어 학습을 위한 콘솔 기반 과제 프로젝트입니다.
 ---
 
 ## 🗂 프로젝트 구조
-<<<<<<< HEAD
-```
-📦 Week2Assignment
-├── 📁 mori/standard
-=======
 > ChallengeLevel3의 내용은 StandardLevel4에 포함되어 있습니다.
 ```
 📦 Week2Assignment
 ├── 📁 standard
->>>>>>> mori/challenge
 │   ├── StandardLevel1.swift
 │   ├── StandardLevel2.swift
 │   ├── StandardLevel3.swift
 │   ├── StandardLevel4.swift
 │   ├── StandardLevel5.swift
-<<<<<<< HEAD
-│   └── main.swift
-├── 📁 mori/challenge
-=======
 ├── 📁 challenge
 │   ├── ChallengeLevel1.swift
 │   ├── ChallengeLevel2.swift
 │   ├── ChallengeLevel4.swift
 ├── main.swift
->>>>>>> mori/challenge
 └── README.md
 ```
 
@@ -76,11 +59,7 @@ Swift 언어 학습을 위한 콘솔 기반 과제 프로젝트입니다.
 
 ---
 
-<<<<<<< HEAD
-## ⚙️ 레벨별 구현 요약
-=======
 ## 📗 Standard 구현 요약
->>>>>>> mori/challenge
 
 ### ✅ StandardLevel1.swift
 - **클로저 기본 개념 학습**
@@ -112,9 +91,6 @@ Swift 언어 학습을 위한 콘솔 기반 과제 프로젝트입니다.
 
 ---
 
-<<<<<<< HEAD
-📍 모든 `StandardLevelX.swift`는 각각 `run()` 함수를 통해 **main.swift에서 독립 실행 가능**하며, `switch`를 통해 유저가 직접 선택 가능하도록 구현되었습니다.
-=======
 ## 📕 Challenge 구현 요약
 
 ### ✅ ChallengeLevel1.swift
@@ -141,4 +117,3 @@ Swift 언어 학습을 위한 콘솔 기반 과제 프로젝트입니다.
 ---
 
 📍 모든 `StandardLevelX.swift` 및 `ChallengeLevelX.swift` 파일은 `run()` 함수로 구성되어 있으며, `main.swift`에서 직접 실행 가능하도록 연동되어 있습니다.
->>>>>>> mori/challenge

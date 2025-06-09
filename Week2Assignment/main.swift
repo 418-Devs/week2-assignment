@@ -20,6 +20,12 @@ if let input = readLine() {
         runLevel4()
     case "5":
         runLevel5()
+    case "6":
+        runChallenge1()
+    case "7":
+        runChallenge2()
+    case "8":
+        runChallenge3()
     default:
         print("잘못된 입력입니다.")
     }

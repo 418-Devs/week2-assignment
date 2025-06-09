@@ -14,6 +14,7 @@ class HybridCar: Car {
     
     // 엔진 교체 기능
     func switchEngine(to newEngine: Engine) {
+        // 교체하려는 엔진이 동일하면 교체할 수 없다는 메시지 출력
         if newEngine.engineType == engine.engineType {
             controller.printMessage(.notswitchEngine(engine: newEngine))
         }

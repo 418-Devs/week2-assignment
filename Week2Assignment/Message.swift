@@ -63,7 +63,7 @@ enum Message {
             return "🔹 3. 필수 문제 (짝수 요소 제거하기)"
             
         case .essential4:
-            return "🔹 4. 필수 문제 (자기소개)"
+            return "🔹 4. 필수 문제 (자기소개 part.1)"
             
         case .essential5:
             return "🔹 5. 필수 문제 (택배 도착 예측 시스템)"
@@ -72,10 +72,10 @@ enum Message {
             return "🔸 1. 도전 문제 (자동차)"
             
         case .challenge2:
-            return "🔸 2. 도전 문제 (정렬 상자 part.1)"
+            return "🔸 2. 도전 문제 (정렬 상자)"
             
         case .challenge3:
-            return "🔸 3. 도전 문제 (정렬 상자 part.2)"
+            return "🔸 3. 도전 문제 (자기소개 part.2 )"
             
         case .challenge4:
             return "🔸 4. 도전 문제 (클래스 순환 참조)"

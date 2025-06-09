@@ -5,7 +5,7 @@
 //  Created by Yoon on 6/5/25.
 //
 
-class Car {
+public class Car {
     public let brand: String
     public let modelName: String
     public let modelYear: String

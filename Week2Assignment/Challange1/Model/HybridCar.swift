@@ -5,10 +5,9 @@
 //  Created by Yoon on 6/5/25.
 //
 
-class HybridCar: Car {
+public class HybridCar: Car {
     init(brand: String, modelName: String, modelYear: String) {
-        let defaultEngine = HybridEngine()
-        super.init(brand: brand, modelName: modelName, modelYear: modelYear, engine: defaultEngine)
+        super.init(brand: brand, modelName: modelName, modelYear: modelYear, engine: HybridEngine())
     }
 
     public func switchEngine(to newEngine: Engine) {

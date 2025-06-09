@@ -12,18 +12,18 @@ public protocol Engine {
 
 // 각 엔진 타입 정의
 
-struct GasolineEngine: Engine {
+internal struct GasolineEngine: Engine {
     let engineName = EngineMessage.gasolineEngineName
 }
 
-struct HydrogenEngine: Engine {
+internal struct HydrogenEngine: Engine {
     let engineName = EngineMessage.hydrogenEngineName
 }
 
-struct ElectricEngine: Engine {
+internal struct ElectricEngine: Engine {
     let engineName = EngineMessage.electricEngineName
 }
 
-struct HybridEngine: Engine {
+internal struct HybridEngine: Engine {
     let engineName = EngineMessage.hybridEngineName
 }

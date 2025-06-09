@@ -59,23 +59,19 @@ outerLoop: while true {
             waitForEnter()
             continue
         case 6:
-            print("ChallengeLevel1 구현 예정")
-            // ChallengeLevel1.run()
+             ChallengeLevel1.run()
             waitForEnter()
             continue
         case 7:
-            print("ChallengeLevel2 구현 예정")
-            // ChallengeLevel2.run()
+             ChallengeLevel2.run()
             waitForEnter()
             continue
         case 8:
-            print("ChallengeLevel3 구현 예정")
-            // ChallengeLevel3.run()
+            print("도전 3번 문제는 필수 4번에 포함되어 있습니다.")
             waitForEnter()
             continue
         case 9:
-            print("ChallengeLevel4 구현 예정")
-            // ChallengeLevel4.run()
+             ChallengeLevel4.run()
             waitForEnter()
             continue
         default:

@@ -86,7 +86,7 @@ class Cat: Introducible {
     }
 }
 
-// Introducible 프로토콜을 채택한 클래스 Dog
+// Introducible 프로토콜을 채택한 구조체 Dog
 struct Dog: Introducible {
     var name: String
 

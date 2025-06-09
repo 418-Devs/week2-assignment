@@ -12,7 +12,10 @@ class Controller {
     let es2 = Essential2()
     let es3 = Essential3()
     let es4 = Essential4()
-    let es5 = Essential5(address: "부산광역시 진구", status: .inTransit(daysRemaining: 2))
+    let es501 = Essential5(address: "부산광역시 진구", status: .inTransit(daysRemaining: 2))
+    let es502 = Essential5(address: "", status: .inTransit(daysRemaining: 2))
+    let es503 = Essential5(address: "부산광역시 진구", status: .notStarted)
+    let es504 = Essential5(address: "부산광역시 진구", status: .error)
     let ch1 = Challenge1()
     let ch2 = Challenge2()
     let ch3 = Challenge3()
@@ -93,9 +96,48 @@ class Controller {
     }
     // 필수 문제 5번
     func essential5() {
-        
+        // 정상 작동
         do {
-            let result = try es5.predictDeliveryDay()
+            let result = try es501.predictDeliveryDay()
+            print(result)
+        } catch DeliveryError.invalidAddress {
+            controller.printMessage(.addresserror)
+        } catch DeliveryError.notStarted {
+            controller.printMessage(.notStarted)
+        } catch DeliveryError.systemError(let reason) {
+            controller.printMessage(.systemerror(reason: reason))
+        } catch {
+            controller.printMessage(.unknownerror)
+        }
+        // 주소 누락시 에러
+        do {
+            let result = try es502.predictDeliveryDay()
+            print(result)
+        } catch DeliveryError.invalidAddress {
+            controller.printMessage(.addresserror)
+        } catch DeliveryError.notStarted {
+            controller.printMessage(.notStarted)
+        } catch DeliveryError.systemError(let reason) {
+            controller.printMessage(.systemerror(reason: reason))
+        } catch {
+            controller.printMessage(.unknownerror)
+        }
+        // 배송 전 상태 에러
+        do {
+            let result = try es503.predictDeliveryDay()
+            print(result)
+        } catch DeliveryError.invalidAddress {
+            controller.printMessage(.addresserror)
+        } catch DeliveryError.notStarted {
+            controller.printMessage(.notStarted)
+        } catch DeliveryError.systemError(let reason) {
+            controller.printMessage(.systemerror(reason: reason))
+        } catch {
+            controller.printMessage(.unknownerror)
+        }
+        // 시스템 에러
+        do {
+            let result = try es504.predictDeliveryDay()
             print(result)
         } catch DeliveryError.invalidAddress {
             controller.printMessage(.addresserror)

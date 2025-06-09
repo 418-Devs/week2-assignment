@@ -21,7 +21,7 @@ func main7() {
     var test = SortableBox<Int>(items: [9, 14, 3, 2, 43, 11, 58, 22])
 
     // 컴파일 에러 확인 코드
-//    var test = SortableBox<String>(items: [[1],[2]])
+//    var test = SortableBox<[Int]>(items: [[1],[2]])
 
     test.sortItems()
     print(test)

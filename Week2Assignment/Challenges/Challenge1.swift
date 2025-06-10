@@ -9,11 +9,13 @@ class Challenge1 {
     let evcar = ElectricCar(brand: "Porsche", model: "Taycan", year: "2024", engine: ElectricEngine())
     let gascar = GasolineCar(brand: "BMW", model: "M550i", year: "2023", engine: GasolineEngine())
     let hybridcar = HybridCar(brand: "Lamborghini", model: "Revuelto", year: "2025", engine: ElectricEngine())
+    let hydrogenCar = HydrogenCar(brand: "Hyundai", model: "NEXO", year: "2025", engine: HydrogenEngine())
     
     func run() {
         evcar.carInfo()
         gascar.carInfo()
         hybridcar.carInfo()
+        hydrogenCar.carInfo()
         
         evcar.speedup()
         evcar.driving()
@@ -23,6 +25,9 @@ class Challenge1 {
         gascar.driving()
         gascar.speeddown()
         gascar.oil()
+        
+        hydrogenCar.speedup()
+        hydrogenCar.hydrogen()
         
         hybridcar.printEngineInfo()
         hybridcar.switchEngine(to: ElectricEngine())

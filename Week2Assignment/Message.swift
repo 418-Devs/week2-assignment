@@ -40,6 +40,7 @@ enum Message {
     case engineInfo(engineType: String)
     case chargeBattery(engineType: String)
     case chargeOil(engineType: String)
+    case chargehydrogen(engineType: String)
     case switchEngine(engine: Engine)
     case notswitchEngine(engine: Engine)
     case carInfo(brand: String, model: String, year: String, engine: Engine)
@@ -50,6 +51,7 @@ enum Message {
     case closureBtoA
     case nilA
     case nilB
+    
     
     var text: String {
         switch self {
@@ -152,6 +154,9 @@ enum Message {
         case .chargeOil(engineType: let type):
             return "⛽️ \(type): 고급 휘발유 주입 중...!"
             
+        case .chargehydrogen(engineType: let type):
+            return "🚀 \(type): 수소 충전 중...!"
+            
         case .switchEngine(engine: let engine):
             return "🔁 \(engine.engineType) 모드로 전환합니다. 🚀"
             
@@ -188,6 +193,7 @@ enum Message {
         case .nilB:
             return "❌ B 인스턴스가 해제되어 클로저에서 접근할 수 없습니다."
 
+        
         }
     }
 }
